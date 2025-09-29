@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main(){
+    float x,y;
+    char ch;
+    cout<<"enter your operations";
+    cin>>x;
+    cin>>ch;
+    cin>>y;
+if(ch =='+') cout<<x+y;
+else if(ch =='-') cout<<x-y;
+if(ch =='*') cout<<x*y;
+if(ch =='/'){
+    if(y==0) cout<<"can't divide by 0";
+    else cout<<x/y;}
+else if(ch =='^'){
+    float result =1;
+    int n= (int)y;
+    for(int i=1; i<=n; i++){
+        result*=x;
+    }
+    cout<<result;
+}
+// ...existing code...
+else if(ch == 's') { // Assuming 's' means sqrt
+    float num = x; // Use x as input for sqrt
+    float guess = num / 2.0;
+    float epsilon = 0.00001; // Precision
+    while((guess * guess - num) > epsilon) {
+        guess = (guess + num / guess) / 2.0;
+    }
+    cout << guess;
+}
+// ...existing code...
+    
+}
